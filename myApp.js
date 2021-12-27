@@ -11,4 +11,11 @@ app.get(
         res.sendFile(absolutePath);
     });
 
+app.get(
+    "/json",
+    function (req, res) {
+        res.json({"message": "Hello json"});
+    }
+);
+
 module.exports = app;
