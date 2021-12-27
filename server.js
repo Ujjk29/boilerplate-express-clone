@@ -23,6 +23,11 @@ if (!process.env.DISABLE_XORIGIN) {
 
 app.use('/public',express.static(__dirname+'/public'));
 
+app.use(function (req, res, next) {
+    console.log(req.method + " " + req.path + " - " + req.ip);
+    next();
+});
+
 var port = process.env.PORT || 3000;
 bGround.setupBackgroundApp(app, myApp, __dirname).listen(port, function(){
   bGround.log('Node is listening on port '+ port + '...')
