@@ -31,7 +31,7 @@ app.get(
         next();
     },
     function (req, res) {
-        res.send("{time: "+req.time+"}");
+        res.json({ time: req.time });
     }
 );
 
