@@ -42,4 +42,12 @@ app.get(
     }
 );
 
+app.get(
+    "/name",
+    function (req, res) {
+        const queryObject = req.query;
+        res.json({ name: queryObject.first + ' ' + queryObject.last });
+    }
+);
+
 module.exports = app;
